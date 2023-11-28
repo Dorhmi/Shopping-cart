@@ -6,9 +6,10 @@ type props = {
     price:number
     imgUrl: string
     amount:number
+    text:string
 }
 
-const StoreItem = ({id , name, price, imgUrl, amount}:props) => {
+const StoreItem = ({id , name, price, imgUrl, amount , text}:props) => {
     const {handleAdd 
         , handleRemove 
         , increase
@@ -21,6 +22,7 @@ return (
             <h2 className="article-title">{name}</h2>
             <p className="article-price">${price}</p>
         </div>
+        <p className="article-description">{text}</p>
         <div className="btn-container">
             {amount === 0 
             ?<button className="article-btn" onClick={()=>handleAdd(id)}>Add to cart</button>

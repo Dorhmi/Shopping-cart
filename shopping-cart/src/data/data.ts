@@ -27,6 +27,7 @@ export default  [
         "id": 4,
         "name": "ASUS",
         "price": 2300,
+        "text": "ASUS laptops, renowned for innovation, encompass a diverse range from the gaming-focused ROG series to the sleek ZenBook lineup. Featuring cutting-edge technology and stylish designs, ASUS laptops cater to various user preferences. The brand's commitment to high-performance components is evident in its vibrant displays and powerful processors. Trusted by gamers, professionals, and everyday users, ASUS maintains a strong presence in the laptop market.",
         "imgUrl": "../assets/ASUS.jpg",
         "amount": 0
     },
@@ -34,6 +35,7 @@ export default  [
         "id": 5,
         "name": "LENOVO",
         "price": 800,
+        "text":"Lenovo, a global technology giant, offers a versatile range of laptops tailored to meet different needs. From the robust ThinkPad series, favored by professionals for its durability, to the stylish and powerful Yoga line, Lenovo laptops combine innovation with practicality. With impressive features, including reliable processors and cutting-edge designs, Lenovo laptops cater to a diverse user base. Renowned for their build quality and performance, Lenovo remains a key player in the laptop market.",
         "imgUrl": "../assets/Lenovo.jpg",
         "amount": 0
     },
@@ -41,6 +43,7 @@ export default  [
         "id": 6,
         "name": "PC Gamer",
         "price": 2700,
+        "text" :"A PC gamer's setup is a battlefield of high-performance components, from powerful graphics cards to lightning-fast processors, creating an immersive gaming experience. The click-clack of mechanical keyboards and the precision of gaming mice define the peripherals, while vibrant RGB lighting sets the ambiance. For a PC gamer, it's not just a rig; it's a customized powerhouse, a portal to virtual worlds where every frame and response time matters. In the realm of PC gaming, performance is paramount, and the quest for the perfect setup is never-ending.",
         "imgUrl": "../assets/PC Gamer.jpg",
         "amount": 0
     },
