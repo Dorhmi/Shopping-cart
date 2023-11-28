@@ -1,13 +1,12 @@
 import StoreItem from '../components/StoreItem'
-import data from '../data/data'
-// import {useState} from 'react'
+import { useGlobalContext } from '../context/Context'
 
 
 const Store = () => {
-    // const [items , setItems] = useState(data)
+    const {items} = useGlobalContext();
 return (
     <section className='store-section'>
-        {data.map((item)=>(
+        {items.map((item)=>(
             <StoreItem key={item.id} {...item}/>
         ))}
     </section>
