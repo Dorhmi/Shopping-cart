@@ -43,7 +43,7 @@ export default  [
         "id": 6,
         "name": "PC Gamer",
         "price": 2700,
-        "text" :"A PC gamer's setup is a battlefield of high-performance components, from powerful graphics cards to lightning-fast processors, creating an immersive gaming experience. The click-clack of mechanical keyboards and the precision of gaming mice define the peripherals, while vibrant RGB lighting sets the ambiance. For a PC gamer, it's not just a rig; it's a customized powerhouse, a portal to virtual worlds where every frame and response time matters. In the realm of PC gaming, performance is paramount, and the quest for the perfect setup is never-ending.",
+        "text" :"A PC gamer's setup is a battlefield of high-performance components, from powerful graphics cards to lightning-fast processors, creating an immersive gaming experience. The click-clack of mechanical keyboards and the precision of gaming mice define the peripherals, while vibrant RGB lighting sets the ambiance. For a PC gamer, it's not just a rig; it's a customized powerhouse, a portal to virtual worlds where every frame and response time matters.",
         "imgUrl": "../assets/PC Gamer.jpg",
         "amount": 0
     },

@@ -1,4 +1,7 @@
+import { useState } from "react"
 import { useGlobalContext } from "../context/Context"
+// import ReadMoreReact from 'read-more-react';
+
 
 type props = {
     id:number
@@ -15,6 +18,8 @@ const StoreItem = ({id , name, price, imgUrl, amount , text}:props) => {
         , increase
         ,decrease
         } = useGlobalContext()
+        const [more , setMore] = useState(true)
+        const newText = more ? text.slice(0,300) : text
 return (
     <article className="article-container">
         <img className="article-img" src={imgUrl} alt={name} />
@@ -22,7 +27,11 @@ return (
             <h2 className="article-title">{name}</h2>
             <p className="article-price">${price}</p>
         </div>
-        <p className="article-description">{text}</p>
+        {/* <ReadMoreReact  text={text} min={30}ideal={100} max={300} readMoreText={`${<button>Read more</button>}`}/> */}
+        <p className="article-description">{newText} 
+        {more ? <span className="read-more-btn" onClick={()=>setMore(!more)}>Read more</span>
+        :<span className="read-more-btn" onClick={()=>setMore(!more)}>Read less</span>}
+        </p>
         <div className="btn-container">
             {amount === 0 
             ?<button className="article-btn" onClick={()=>handleAdd(id)}>Add to cart</button>

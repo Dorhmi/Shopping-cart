@@ -8,6 +8,7 @@ const Navbar = () => {
 return (
     <nav className="nav-container">
         <div className="nav-center">
+            <Link to={'/'} className='logo'>InnoCraft </Link>
             <div className='links-container'>
                 <Link className='link' to={'/'}>Home</Link>
                 <Link className='link' to={'/store'}>Store</Link>
