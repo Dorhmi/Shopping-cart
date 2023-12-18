@@ -1,22 +1,22 @@
 import { useState } from "react"
 import { useGlobalContext } from "../context/Context"
-// import ReadMoreReact from 'read-more-react';
 
 
 type props = {
-    id:number
-    name:string
-    price:number
+    id: number
+    name: string
+    price: number
     imgUrl: string
-    amount:number
-    text:string
+    amount: number
+    text: string
+    key: number
 }
 
-const StoreItem = ({id , name, price, imgUrl, amount , text}:props) => {
+const StoreItem = ({id , name, price, imgUrl, amount , text }:props) => {
     const {handleAdd 
         , handleRemove 
         , increase
-        ,decrease
+        , decrease
         } = useGlobalContext()
         const [more , setMore] = useState(true)
         const newText = more ? text.slice(0,300) : text
@@ -27,7 +27,6 @@ return (
             <h2 className="article-title">{name}</h2>
             <p className="article-price">${price}</p>
         </div>
-        {/* <ReadMoreReact  text={text} min={30}ideal={100} max={300} readMoreText={`${<button>Read more</button>}`}/> */}
         <p className="article-description">{newText} 
         {more ? <span className="read-more-btn" onClick={()=>setMore(!more)}>Read more</span>
         :<span className="read-more-btn" onClick={()=>setMore(!more)}>Read less</span>}

@@ -1,5 +1,5 @@
 import {createContext , useState , useContext} from 'react'
-import data from '../data/data'
+import data from '../data/data';
 
 type props = {
     children: React.ReactNode
@@ -11,6 +11,7 @@ type items = {
     price: number;
     imgUrl: string;
     amount: number;
+    text: string;
 }
 
 type ShoppingCartContext = {
@@ -20,6 +21,8 @@ type ShoppingCartContext = {
     handleRemove: (id:number) => void
     increase: (id:number) => void
     decrease: (id:number) => void
+    isOpen: boolean
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 
@@ -28,7 +31,10 @@ export const AppProvider = createContext({} as ShoppingCartContext)
 
 export default function Context ({children}:props) {
     const [items , setItems] = useState<items[]>(data)
+    const [cartItems , setCartItems] = useState<items[]>([])
     const [amount] = useState(0)
+    const [isOpen , setIsOpen] = useState(false)
+
 
 
     const handleAdd = (id:Number) => {
@@ -71,6 +77,8 @@ export default function Context ({children}:props) {
             handleRemove,
             increase,
             decrease,
+            setIsOpen,
+            isOpen,
         }}>
             {children}
         </AppProvider.Provider>

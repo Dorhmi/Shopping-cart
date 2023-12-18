@@ -4,7 +4,7 @@ import { useGlobalContext } from '../context/Context';
 
 
 const Navbar = () => {
-    const {amount} = useGlobalContext()
+    const {amount , setIsOpen} = useGlobalContext()
 return (
     <nav className="nav-container">
         <div className="nav-center">
@@ -14,7 +14,7 @@ return (
                 <Link className='link' to={'/store'}>Store</Link>
                 <Link className='link' to={'/about'}>About</Link>
             </div>
-            <div className='icon-container'>
+            <div onClick={()=>{setIsOpen(true)}} className='icon-container'>
                 <span className='cart-icon'><FaCartShopping/></span>
                 <span className='cart-number'>{amount}</span>
             </div>

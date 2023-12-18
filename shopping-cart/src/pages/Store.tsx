@@ -7,7 +7,7 @@ const Store = () => {
 return (
     <section className='store-section'>
         {items.map((item)=>(
-            <StoreItem key={item.id} {...item}/>
+            <StoreItem key={item.id} {...item} />
         ))}
     </section>
 )
