@@ -261,6 +261,58 @@ body {
     color: #d52a2a;
 }
 
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-a;
+    margin-top: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.item-img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-title {
+    display: flex;
+    gap: 5px;
+}
+.price-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.item-btn {
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 1px solid #ff3c3c;
+    background: transparent;
+    color: #ff3c3c;
+    font-weight: 600;
+    cursor: pointer;
+}
+.item-btn:hover {
+    border: 1px solid #d52a2a;
+    color: #d52a2a;
+}
+
 @media(max-width:800px) {
     .logo {
         display: none;

@@ -1,9 +1,10 @@
 import { useGlobalContext } from "../context/Context"
+import CartItem from "./CartItem"
 
 
 
 const Slidebar = () => {
-    const {isOpen , setIsOpen , items} =  useGlobalContext()
+    const {isOpen , setIsOpen ,  cartItems } =  useGlobalContext()
 return (
     <aside className={`side-bar ${isOpen && 'show-bar'}`}>
         <div className="side-header">
@@ -11,8 +12,8 @@ return (
             <button onClick={()=>setIsOpen(false)} className="side-btn">X</button>
         </div>
         <div className="cart-content">
-            {items.map((item) => (
-                <article>item</article>
+            {cartItems.map((item) => (
+                <CartItem key={item.id} {...item}/>
             ))}
         </div>
     </aside>

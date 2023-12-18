@@ -1,4 +1,4 @@
-import {createContext , useState , useContext} from 'react'
+import {createContext , useState , useContext, useEffect} from 'react'
 import data from '../data/data';
 
 type props = {
@@ -23,6 +23,8 @@ type ShoppingCartContext = {
     decrease: (id:number) => void
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    cartItems: items[]
+    setCartItems: React.Dispatch<React.SetStateAction<items[]>>
 }
 
 
@@ -32,7 +34,7 @@ export const AppProvider = createContext({} as ShoppingCartContext)
 export default function Context ({children}:props) {
     const [items , setItems] = useState<items[]>(data)
     const [cartItems , setCartItems] = useState<items[]>([])
-    const [amount] = useState(0)
+    const [amount , setAmount] = useState(0)
     const [isOpen , setIsOpen] = useState(false)
 
 
@@ -69,6 +71,16 @@ export default function Context ({children}:props) {
         setItems(newitems)
     }
 
+    useEffect(()=>{
+        setCartItems(items.filter((item)=> item.amount > 0 ))
+        let amount = 0
+        items.map((item) => {
+            amount += item.amount 
+        })
+        setAmount(amount)
+    },items)
+
+
     return(
         <AppProvider.Provider value={{
             items,
@@ -79,6 +91,8 @@ export default function Context ({children}:props) {
             decrease,
             setIsOpen,
             isOpen,
+            cartItems,
+            setCartItems
         }}>
             {children}
         </AppProvider.Provider>
