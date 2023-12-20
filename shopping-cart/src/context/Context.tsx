@@ -25,18 +25,19 @@ type ShoppingCartContext = {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
     cartItems: items[]
     setCartItems: React.Dispatch<React.SetStateAction<items[]>>
+    total: number
 }
 
 
 export const AppProvider = createContext({} as ShoppingCartContext)
-
 
 export default function Context ({children}:props) {
     const [items , setItems] = useState<items[]>(data)
     const [cartItems , setCartItems] = useState<items[]>([])
     const [amount , setAmount] = useState(0)
     const [isOpen , setIsOpen] = useState(false)
-
+    const [total , setTotal] = useState(0)
+    
 
 
     const handleAdd = (id:Number) => {
@@ -47,6 +48,9 @@ export default function Context ({children}:props) {
 
     const handleRemove = (id:number) => {
         setItems(items.map((item)=> 
+        item.id === id ?{...item , amount: item.amount = 0 }: item
+        ))
+        setCartItems(cartItems.map((item)=>
         item.id === id ?{...item , amount: item.amount = 0 }: item
         ))
     }
@@ -78,7 +82,27 @@ export default function Context ({children}:props) {
             amount += item.amount 
         })
         setAmount(amount)
+
+        // const totalPrice = cartItems.reduce((total,item)=> total + (item.price * item.amount),0 )
+        
+        // let totalPrice = 0
+        // cartItems.map((item) =>{
+        //     totalPrice += (item.price * item.amount)
+        // })
+        
+        const totalPrice = items.reduce((sum , item) => {
+            const {price , amount} =item
+            const priceTotal = price * amount
+            sum.total += priceTotal 
+            return sum 
+        } , 
+        {
+            total : 0,
+        })
+        setTotal(totalPrice.total)
     },items)
+
+
 
 
     return(
@@ -92,7 +116,8 @@ export default function Context ({children}:props) {
             setIsOpen,
             isOpen,
             cartItems,
-            setCartItems
+            setCartItems,
+            total,
         }}>
             {children}
         </AppProvider.Provider>

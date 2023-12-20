@@ -4,7 +4,7 @@ import CartItem from "./CartItem"
 
 
 const Slidebar = () => {
-    const {isOpen , setIsOpen ,  cartItems } =  useGlobalContext()
+    const {isOpen , setIsOpen ,  cartItems , total} =  useGlobalContext()
 return (
     <aside className={`side-bar ${isOpen && 'show-bar'}`}>
         <div className="side-header">
@@ -16,6 +16,7 @@ return (
                 <CartItem key={item.id} {...item}/>
             ))}
         </div>
+        <h3 className="total-price">Total : ${total}</h3>
     </aside>
 )
 }
